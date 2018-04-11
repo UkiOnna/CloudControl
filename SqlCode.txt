@@ -1,0 +1,16 @@
+create database AlphaCloud
+use AlphaCloud
+
+create table Userr (
+Id int primary key identity not null ,
+Login varchar(50) not null unique,
+Password varchar(50) not null 
+)
+
+create table FileBase(
+Id int primary key identity not null ,
+UserId int foreign key references Userr(Id) not null,
+binaryData varbinary(max) not null,
+Name varchar(255) not null,
+
+)
